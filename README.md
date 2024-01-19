@@ -10,6 +10,13 @@
 
 ### 카카오맵 api키 숨기기
 >`.gitignore` 파일에 명시해준다.  
->그리고
+
+
+### aside 버튼 추가
+`window.scrollTo({left:0, top:0, behavior:'smooth'});`  
+이와 같은 코드로 특정 위치로 이동 가능하다.  
+`element.classList.add("on");  `  
+`element.classList.remove("on");`  
+이와 같은 코드로 elment의 클래스 변경이 가능하다.
 
 
