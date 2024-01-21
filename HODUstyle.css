@@ -1,9 +1,12 @@
 *{
     box-sizing: border-box;
 }
+html,body{
+    width: 100%;
+    height: 100%;
+}
 body{
     margin:0;
-
 }
 header{
     background-color: #F2E9D8;
@@ -89,6 +92,7 @@ main{
 }
 .representative-photo-element{
     display: flex;
+    margin-top: 80px;
 
 }
 .representative-photo-element div{
@@ -98,17 +102,28 @@ main{
 .img-list-wraper{
     text-align: center;
 }
+.img-list-wraper h2{
+    margin-top: 100px;
+    font-size: 48px;
+    font-weight: 700;
+    color: #D97652;
+}
 .image-list-wraper-element{
-    width: 1280px;
+    width: 1350px;
+    margin-top:88px;
 }
 .image-list{
     display: inline-block;
+    padding:0;
+    margin:0;
 }
 .image-list-wraper-element .image-list li{
     display:inline-block;
 }
 .image-list-wraper-element .image-list img{
     width:378px;
+    height:378px;
+    margin:0 36px 72px 36px;
     border-radius: 30px;
 }
 
@@ -130,13 +145,36 @@ footer .email-subscription{
     border-radius: 30px;
     background-color: #263140;
     color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+.email-subscription>div{
+    width: 471px;
+    height: 99px;
+    margin-left:58px;
+}
+
+.email-subscription form{
+    display: flex;
+    align-items: center;
+}
+.email-subscription input{
+    width: 530px;
+    height: 60px;
+    margin-left:163px;
+    border-radius: 60px;
+}
+.email-subscription button{
+    position: relative;
+    width:135px;
+    left:-145px;
 }
 footer>img{
     position: relative;
     top:-100px;
     z-index: -10;
 }
-footer div:nth-of-type(2){
+footer .copyright-box{
     display:flex;
     width: 1280px;
     justify-content: space-between;
@@ -158,13 +196,55 @@ footer div:nth-of-type(2){
     top:50%;
     transform: translate(-50%,-50%);
 }
+
+/*모달창*/
+.modal{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.modal.on{
+    display: flex;
+
+}
+.modal div{
+    width:600px;
+    height:400px;
+    background: url("./media/무제-1 1.png");
+    border-radius: 30px;
+    text-align: center;
+}
+.modal img{
+    margin-top:60px;
+    top:60px;
+}
+.modal p:nth-child(2){
+    margin-top:24px;
+    margin-bottom: 0;
+    font-size: 36px;
+    line-height: 45px;
+
+}
+.modal span{
+    margin-top:38px;
+}
+
+/*어사이드 버튼*/
 aside{
     opacity:0;
+    display:none
 }
 aside.on{
 
     z-index: 1;
     opacity:1;
+    display:block;
 }
 aside button[data-6]{
     width: 50px;
@@ -181,6 +261,8 @@ aside button[data-6]{
 aside button[data-6]:hover{
     background: url("./media/keyboard_arrow_up_hover.svg");
 }
+
+/*미디어쿼리*/
 @media screen and (max-width: 1280px) {
     header {
         display:inline-block;
@@ -203,8 +285,24 @@ aside button[data-6]:hover{
     }
     footer .email-subscription{
         width:100%;
+        height: 100%;
+        flex-direction: column;
     }
-    footer div:nth-of-type(2){
+    footer .email-subscription div{
+        width:100%;
+        height:100%;
+    }
+    footer .email-subscription form{
+        flex-direction: column;
+    }
+    footer .email-subscription input{
+        width:262px;
+        margin-left:0;
+    }
+    footer .email-subscription button{
+        left:66px;
+    }
+    footer .copyright-box{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -217,17 +315,83 @@ aside button[data-6]:hover{
     }
 }
 @media (max-width:662px) {
+    header{
+        height: auto;
+    }
+    header #Top_navigation-bar{
+        width:100%;
+        justify-content: space-between;
+    }
+    header #Top_navigation-bar nav{
+        margin-left:0;
+    }
+    header #main-detail{
+        display: flex;
+        width:100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    header #main-detail>section{
+        text-align: center;
+    }
     main .representative-photo-element img{
         width: 100%;
         object-fit: cover;
     }
     .image-list-wraper-element .image-list img{
         width:100%;
+        margin:16px 0;
         object-fit: cover;
     }
 }
-/*@media (max-width: 378px){*/
-/*    .image-list-wraper-element .image-list img{*/
-/*        */
-/*    }*/
-/*}*/
+#icon+label{
+    width:32px;
+    height: 32px;
+    position: absolute;
+    right:20px;
+    top: 22px;
+    cursor: pointer;
+}
+
+#icon+label>span{
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: black;
+    position: absolute;
+}
+
+#icon+label>span:nth-child(1){
+    top:0;
+}
+#icon+label>span:nth-child(2){
+    top:50%;
+    transform: translateY(-50%);
+}
+#icon+label>span:nth-child(3){
+    bottom:0;
+}
+
+.mobile-navigation{
+    display:none;
+    width:289px;
+    height: 820px;
+    position: absolute;
+    top:0;
+    right: 0;
+    background-color: #263140;
+}
+.mobile-navigation ul{
+    list-style-type: none;
+    margin-top: 120px;
+    padding-left: 50px;
+}
+.mobile-navigation li{
+    margin-bottom: 30px;
+}
+.mobile-navigation li a{
+    color:#FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}

@@ -7,13 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HODU</title>
     <link rel="stylesheet" href="HODUstyle.css">
-
+    <script defer src="./javascript/aside_btn.js"></script>
 </head>
 <body>
+    <div class="mobile-navigation">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Support</a></li>
+        </ul>
+    </div>
     <header>
         <section id="Top_navigation-bar">
             <a href=""><img src="./media/Logo-fin.svg" alt="HODU사이트이동"></a>
-            <nav>
+            <nav class="pc-navigation">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
@@ -21,6 +28,10 @@
                 </ul>
             </nav>
             <a href="" class="buttonShape">Download</a>
+            <input type="checkbox" id="icon" class="blind">
+            <label for="icon">
+                <span></span><span></span><span></span>
+            </label>
         </section>
         <section id="main-detail">
             <section>
@@ -75,16 +86,20 @@
     </main>
     <footer>
         <div class="email-subscription">
-            <p>Subscribe to our Blog post</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text </p>
+            <div>
+                <p>Subscribe to our Blog post</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text </p>
+            </div>
             <form action="">
-                <input type="email">
+                <label for="email-input" class="blind">이메일을 입력해 주세요</label>
+                <input type="email" id="email-input">
                 <button class="buttonShape">Subscribe</button>
             </form>
         </div>
         <img src="./media/img_5.png" alt="" >
-        <div>
+
+        <div class="copyright-box">
             <img src="./media/Logo-fin.svg" alt="호두사이트로 이동">
             <div class="copyright-social-icon-wrapper">
                 <a href="https://blog.naver.com/" class="social-icon" target="_blank"><img src="./media/blog.png" alt="호두 네이버 블로그로 이동"></a>
@@ -94,11 +109,18 @@
             </div>
         </div>
     </footer>
+    <section class="modal">
+        <div>
+            <img src="./media/cat%201.png" alt="이메일 구독 성공 고양이">
+            <p>Thank you!</p>
+            <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+            <span class="buttonShape">OK! I Love HODU</span>
+        </div>
+    </section>
     <aside data-6 class="">
         <button data-6 type="button" >
             Top
         </button>
     </aside>
-    <script src="./javascript/aside_btn.js"></script>
 </body>
 </html>
