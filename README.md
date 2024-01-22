@@ -23,3 +23,16 @@
 ### 이메일 구독 추가
 `element.value` 로 input element의 값을 받아올 수 있다. 이후 모달창을
 띄운다.  
+
+
+### throttling
+```javascript
+let timer =null;
+//
+if(timer===null){
+    timer=setTimeout(()=>{
+        callback();
+        timer=null;
+    },delay);
+}
+```  

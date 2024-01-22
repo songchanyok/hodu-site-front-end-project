@@ -121,6 +121,9 @@ main{
 .image-list-wraper-element .image-list li{
     display:inline-block;
 }
+.image-list-wraper-element .image-list li:hover{
+    transform: scale(1.1);
+}
 .image-list-wraper-element .image-list img{
     width:378px;
     height:378px;
