@@ -11,7 +11,7 @@ subscribeButton.addEventListener('click',(event)=>{
 });
 
 const closeModal = document.querySelector(".close_btn");
-closeModal.addEventListener('click',(event)=>{
+closeModal.addEventListener('click',()=>{
     modalPage.classList.remove("on");
 });
 window.onclick=function (event){
