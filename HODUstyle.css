@@ -40,6 +40,7 @@ a{
     color:#FFFFFF;
     background-color: #D97652;
     border:none;
+    cursor: pointer;
 }
 .set-flex-center-column{
     display: flex;
@@ -215,7 +216,7 @@ footer .copyright-box{
 }
 .modal div{
     width:600px;
-    height:400px;
+    padding-bottom: 40px;
     background: url("./media/무제-1 1.png");
     border-radius: 30px;
     text-align: center;
