@@ -52,18 +52,64 @@ function throttling(callback,delay){
 }
 window.addEventListener('scroll',(event)=>{
     if(infiniteScroll_flag) {
-        if (window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight){
+        if (window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight) {
             throttling(()=>{
                 pageToFetch += 1;
                 fetchImages(pageToFetch);
-                if (pageToFetch%10===0){
-                    infiniteScroll_flag=0;
+                if (pageToFetch % 10 === 0) {
+                    infiniteScroll_flag = 0;
                 }
-            },1900);
-
+            },2000);
         }
     }
 });
+
+const section=document.querySelector("#main-detail");
+//image click event
+window.onclick=function (event){
+    if(event.target===modalPage){
+        modalPage.classList.remove("on");
+
+    }
+    if(event.target===section){
+        mobileNavigation.style.display='none';
+    }
+
+    let imgClick = document.querySelectorAll(".image-list-wraper-element .image-list img");
+    imgClick.forEach(item=>{
+        item.addEventListener('click',()=> {
+            console.log('이미지 클릭');
+            let img = document.createElement('img');
+            img.src = item.src;
+            img.style.width = '100%'
+            img.style.position = 'fixed';
+            img.style.top = '50%';
+            img.style.transform = 'translateY(-50%)';
+            img.style.zIndex = 200;
+            img.style.opacity = 1;
+            document.querySelector("header").style.opacity = '0.3';
+            document.querySelector("main").style.opacity = '0.3';
+            document.querySelector("footer").style.opacity = '0.3';
+            img.classList.add("img-click-event");
+            document.body.appendChild(img);
+        });
+    });
+
+    let forDelete=document.querySelectorAll(".img-click-event");
+    let forDelete_item=forDelete.item(forDelete.length-1);
+    if(event.target===forDelete_item){
+
+        if(forDelete!==null){
+            forDelete.forEach((item)=>{
+                document.body.removeChild(item);
+            });
+            document.querySelector("header").style.opacity= '1';
+            document.querySelector("main").style.opacity= '1';
+            document.querySelector("footer").style.opacity= '1';
+        }
+    }
+}
+
 
 
 

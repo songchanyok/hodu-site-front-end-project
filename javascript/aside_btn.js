@@ -15,3 +15,20 @@ window.addEventListener('scroll',function (){
         top_button.classList.remove("on");
     }
 })
+let mobileNavigation = document.querySelector(".mobile-navigation");
+
+
+
+let hamburgerButton= document.querySelector(".hamburger-box label");
+let flag=true;
+hamburgerButton.addEventListener('click',()=>{
+    if(flag){
+        mobileNavigation.style.display='block';
+        flag=false;
+    }else{
+        mobileNavigation.style.display='none';
+        flag=true;
+    }
+});
+
+

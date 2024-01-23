@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+p{
+    font-family: Pretendard-Regular;
+}
 *{
     box-sizing: border-box;
 }
@@ -71,6 +80,8 @@ a{
 #Top_navigation-bar nav ul li{
     display:inline-block;
     padding:0 15px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 #main-detail{
@@ -80,6 +91,16 @@ a{
 }
 #main-detail section:nth-child(1){
     margin-top: 200px;
+}
+#main-detail section:nth-child(1) p:first-child{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+}
+#main-detail section:nth-child(1) p:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 #main-detail section:nth-child(2){
     margin-top: 32px;
@@ -99,6 +120,17 @@ main{
 .representative-photo-element div{
     display: inline-block;
     padding: 92px 0;
+    width: 510px;
+}
+.representative-photo-element div p:nth-child(1){
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+}
+.representative-photo-element div p:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 .img-list-wraper{
     text-align: center;
@@ -108,6 +140,20 @@ main{
     font-size: 48px;
     font-weight: 700;
     color: #D97652;
+}
+.img-list-wraper>p:nth-of-type(1){
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+.img-list-wraper>p:nth-of-type(1) strong{
+    font-weight: 700;
+    color: #D97652;
+}
+.img-list-wraper>p:nth-of-type(2){
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
 }
 .image-list-wraper-element{
     width: 1350px;
@@ -131,6 +177,17 @@ main{
     border-radius: 30px;
 }
 
+.location-map-wrap h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+}
+.location-map-wrap p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color:#606367;
+}
 #map{
     width:1280px;
     height:520px;
@@ -157,8 +214,22 @@ footer .email-subscription{
     height: 99px;
     margin-left:58px;
 }
-
+.email-subscription>div p:first-child{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+}
+.email-subscription>div p:nth-of-type(2){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #F2E9D8;
+}
 .email-subscription form{
+    display: flex;
+    align-items: center;
+}
+.email-subscription form div{
     display: flex;
     align-items: center;
 }
@@ -167,6 +238,15 @@ footer .email-subscription{
     height: 60px;
     margin-left:163px;
     border-radius: 60px;
+    text-indent: 68px;
+}
+.email-subscription input::placeholder{
+    font-size: 16px;
+    color:#767676;
+}
+.email-subscription form img{
+    position: relative;
+    left:215px;
 }
 .email-subscription button{
     position: relative;
@@ -271,9 +351,20 @@ aside button[data-6]:hover{
     header {
         display:inline-block;
     }
-
+    header #Top_navigation-bar .hamburger-box{
+        display:inline-block;
+    }
+    header #Top_navigation-bar .pc-navigation{
+        display:none;
+    }
+    header #Top_navigation-bar .top-pc-download-btn{
+        display: none;
+    }
     main .representative-photo-element{
         flex-direction: column;
+    }
+    .representative-photo-element div{
+        width: auto;
     }
     .image-list-wraper-element{
         width: 100%;
@@ -298,6 +389,10 @@ aside button[data-6]:hover{
     }
     footer .email-subscription form{
         flex-direction: column;
+    }
+    .email-subscription form img{
+        position: relative;
+        left:34px;
     }
     footer .email-subscription input{
         width:262px;
@@ -347,6 +442,9 @@ aside button[data-6]:hover{
         margin:16px 0;
         object-fit: cover;
     }
+}
+.hamburger-box{
+    display:none;
 }
 #icon+label{
     width:32px;

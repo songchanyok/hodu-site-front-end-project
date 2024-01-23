@@ -15,7 +15,5 @@ closeModal.addEventListener('click',()=>{
     modalPage.classList.remove("on");
 });
 window.onclick=function (event){
-  if(event.target===modalPage){
-      modalPage.classList.remove("on");
-  }
+
 };
