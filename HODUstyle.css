@@ -6,6 +6,7 @@
 }
 p{
     font-family: Pretendard-Regular;
+    margin:0;
 }
 *{
     box-sizing: border-box;
@@ -216,7 +217,7 @@ footer .email-subscription{
 }
 .email-subscription>div p:first-child{
     font-weight: 700;
-    font-size: 36px;
+    font-size: 31px;
     line-height: 45px;
 }
 .email-subscription>div p:nth-of-type(2){
@@ -224,6 +225,7 @@ footer .email-subscription{
     font-size: 14px;
     line-height: 18px;
     color: #F2E9D8;
+    padding-top:18px;
 }
 .email-subscription form{
     display: flex;
